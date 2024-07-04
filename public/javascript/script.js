@@ -30,6 +30,10 @@ const renderBoard = () => {
           }
           e.dataTransfer.setData('text/plain','');
         })
+        box.addEventListener('drop',(e)=>{
+        e.preventDefault()
+        })
+
         square.appendChild(piece)
       }
     });
