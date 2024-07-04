@@ -21,7 +21,16 @@ const renderBoard = () => {
         const piece = document.createElement("div");
         piece.classList("piece", box.color === "w" ? "white" : "black");
         piece.innerHTML='';
-        piece.draggable='';
+        piece.draggable=playerRole===box.color;
+
+        piece.addEventListener('dragstart',(e)=>{
+          if(piece.draggable){
+            draggedPiece=piece
+            sourceSquare={row:rowIndex, col:boxIndex}
+          }
+          e.dataTransfer.setData('text/plain','');
+        })
+        square.appendChild(piece)
       }
     });
   });
