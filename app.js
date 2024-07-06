@@ -69,6 +69,6 @@ app.get("/", (req, res) => {
   res.render("index", { title: "chess game" });
 });
 
-server.listen(PORT, () =>
+server.listen(PORT, () => 
   console.log(`The server is running on PORT: ${PORT}`)
 );
